@@ -9,8 +9,52 @@ html {
     font-size: 20px;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 25px;
+}
+
 .calculator {
     display: flex;
     justify-content: center;
-    background-color: #74578d;
+    flex-direction: column;
+    background-color: #baa0d1;
+    height: 650px;
+    width: 500px;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.screen {
+    background-color: #ced1a3;
+    height: 200px;
+    width: 460px;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+button {
+    width: 112px;
+    height: 80px;
+    border-radius: 30px;
+    margin: 5px;
+    margin-bottom: 8px;
+    font-size: 30px;
+    background-color: #efe6f7;
+}
+
+#operation {
+    background-color: rgb(251, 226, 230);
+}
+
+#top {
+    background-color: rgb(245, 213, 239);
 }
