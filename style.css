@@ -51,10 +51,34 @@ button {
     background-color: #efe6f7;
 }
 
-#operation {
+#all-clear {
+    background-color: rgb(245, 213, 239);
+}
+
+#clear {
+    background-color: rgb(245, 213, 239);
+}
+
+#sign {
+    background-color: rgb(245, 213, 239);
+}
+
+#percent {
+    background-color: rgb(245, 213, 239);
+}
+
+#divide {
     background-color: rgb(251, 226, 230);
 }
 
-#top {
-    background-color: rgb(245, 213, 239);
+#multiply {
+    background-color: rgb(251, 226, 230);
+}
+
+#subtract {
+    background-color: rgb(251, 226, 230);
+}
+
+#add {
+    background-color: rgb(251, 226, 230);
 }
