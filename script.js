@@ -40,6 +40,9 @@ clear.addEventListener('click', () => {
 })
 
 point.addEventListener('click', () => {
+    if (currentInput.includes('.')) {
+        return;
+    }
     currentInput += '.';
     changeDisplay();
 })
@@ -54,14 +57,34 @@ sign.addEventListener('click', () => {
     changeDisplay();
 })
 
+equals.addEventListener('click', () => {
+    calculate();
+    changeDisplay();
+})
+
 function operate (operator, a, b) {
     switch (operator) {
         case '+': return a + b;
         case '-': return a - b;
-        case '*': return a * b;
-        case '÷': return a / b;
+        case 'x': return a * b;
+        case '÷': 
+        if (b == 0) {
+            return "Error";
+        }
+        return a / b;
         default: null;
     }
+}
+
+function calculate() {
+    let result;
+    result = operate(currentOperation, parseFloat(prevInput), parseFloat(currentInput));
+    if (Math.abs(result) > 999999999 || reuslt.length > 9) {
+        result = result.toExponential(2);
+    }
+    currentInput = result;
+    currentOperation = null;
+    prevInput = '';
 }
 
 function changeDisplay() {
@@ -75,11 +98,13 @@ function changeDisplay() {
 }
 
 function appendNumber (number) {
-    currentInput = currentInput.toString() + number.toString();
+    if (currentInput.length < 10) {
+        currentInput = currentInput.toString() + number.toString();
+    }
 }
 
 function chooseOperation(operation) {
-    if (currentInput === '') return;
+    if (currentInput == '') return;
     if (prevInput !== '') {
         calculate();
     }
