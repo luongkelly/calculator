@@ -79,7 +79,7 @@ function operate (operator, a, b) {
 function calculate() {
     let result;
     result = operate(currentOperation, parseFloat(prevInput), parseFloat(currentInput));
-    if (Math.abs(result) > 999999999 || reuslt.length > 9) {
+    if (Math.abs(result) > 999999999 || result.length > 9) {
         result = result.toExponential(2);
     }
     currentInput = result;
